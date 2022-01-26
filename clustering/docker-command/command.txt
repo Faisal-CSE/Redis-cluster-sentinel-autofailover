@@ -14,3 +14,34 @@ docker run -d -p 7802:7800  --name redis-2 --net redis-network -v ${PWD}/redis-2
 
 #redis-3
 docker run -d -p 7803:7800  --name redis-3 --net redis-network -v ${PWD}/redis-3:/etc/redis/ redis:6.0-alpine redis-server /etc/redis/redis.conf
+
+
+
+
+
+
+
+#OUTPUT WHILE RUN IN TERMINAL
+-----------------------------
+ubuntu@faisal-porag:~/redis-cluster$ cd clustering/
+ubuntu@faisal-porag:~/redis-cluster/clustering$ docker run -d -p 7800:7800  --name redis-0 --net redis-network -v ${PWD}/redis-0:/etc/redis/ redis:6.0-alpine redis-server /etc/redis/redis.conf
+Unable to find image 'redis:6.0-alpine' locally
+6.0-alpine: Pulling from library/redis
+59bf1c3509f3: Pull complete 
+719adce26c52: Pull complete 
+b8f35e378c31: Pull complete 
+a4532a38be86: Pull complete 
+48a378fdd03c: Pull complete 
+207a1487d00e: Pull complete 
+Digest: sha256:e9d08d1d7ba766d3740dee923cf4801fa14c6dd273897c8406d39674041fcb66
+Status: Downloaded newer image for redis:6.0-alpine
+10d8e2ca8f87177d17952c9e85851cea124e60aa44d3bc69fb67ac8efc467b6e
+ubuntu@faisal-porag:~/redis-cluster/clustering$ docker run -d -p 7801:7800  --name redis-1 --net redis-network -v ${PWD}/redis-1:/etc/redis/ redis:6.0-alpine redis-server /etc/redis/redis.conf
+60bfa41570cee56313c906adcfd9b9a4d125af4348e5742a3aec6d1c879306b0
+ubuntu@faisal-porag:~/redis-cluster/clustering$ docker run -d -p 7802:7800  --name redis-2 --net redis-network -v ${PWD}/redis-2:/etc/redis/ redis:6.0-alpine redis-server /etc/redis/redis.conf
+3a14ad480cf88b77805429ba538e0e93c50d6585d4554c98628ebf2b098581df
+ubuntu@faisal-porag:~/redis-cluster/clustering$ docker run -d -p 7803:7800  --name redis-3 --net redis-network -v ${PWD}/redis-3:/etc/redis/ redis:6.0-alpine redis-server /etc/redis/redis.conf
+48a28c7ca544d0fdbcc19c416c7f8566b054a9c732f0d84fe27399a314ed1214
+
+
+
