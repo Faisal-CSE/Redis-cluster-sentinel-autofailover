@@ -1,0 +1,16 @@
+cd .\clustering\
+
+#redis-0
+docker run -d -p 7800:7800  --name redis-0 --net redis-network -v ${PWD}/redis-0:/etc/redis/ redis:6.0-alpine redis-server /etc/redis/redis.conf
+
+
+#redis-1
+docker run -d -p 7801:7800  --name redis-1 --net redis-network -v ${PWD}/redis-1:/etc/redis/ redis:6.0-alpine redis-server /etc/redis/redis.conf
+
+
+#redis-2
+docker run -d -p 7802:7800  --name redis-2 --net redis-network -v ${PWD}/redis-2:/etc/redis/ redis:6.0-alpine redis-server /etc/redis/redis.conf
+
+
+#redis-3
+docker run -d -p 7803:7800  --name redis-3 --net redis-network -v ${PWD}/redis-3:/etc/redis/ redis:6.0-alpine redis-server /etc/redis/redis.conf
